@@ -15,6 +15,7 @@ channels that they are interested in. Scaling is easy. Just add more resgate and
 * This is a very light client and a lot of functionality has been left out. The idea was to simplify the process of connecting to websockets provided by resgate.
 * If you are using resgate for anything more than a very simple pub-sub websocket connection, you will quickly outgrow this client. But it may give you a good starting base to better understand the protocol.
 * This client is for websocket clients only. I haven't provided functionality for REST clients
+* This client is designed to be very lightweight, leaving many design considerations up to the developer. For example, it doesn't provide any logging or exceptions etc
 
 
 ### Getting started
