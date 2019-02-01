@@ -33,13 +33,12 @@ async def run(loop):
         await nc.publish(msg.reply, json.dumps(newmsg).encode())
 
     async def change_publisher(msg):
-       # msg = {"message":"helloworld"}
-        await nc.publish('news.today.change', json.dumps(msg).encode())
+        await nc.publish('event.news.today.change', json.dumps(msg).encode())
 
     # Simple publisher and async subscriber via coroutine.
     await nc.subscribe("get.news.today", cb=subscription_handler)
     await nc.subscribe("access.news.today", cb=access_handler)
-    await nc.subscribe("call.news.today.set", cb=change_publisher)
+    #await nc.subscribe("call.news.today.set", cb=change_publisher)
     await update_news(loop)
 
 

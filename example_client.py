@@ -16,7 +16,7 @@ def on_message(ws, message):
     print('message received from resgate server: ', message)
     msg = resclient.parse_message(json.loads(message))
     print('parsed message: ',msg)
-    if count >3 :
+    if count ==3 :
         print('unsubscribing')
         msg = resclient.get_unsubscribe_msg('news.today')
         ws.send(json.dumps(msg))
