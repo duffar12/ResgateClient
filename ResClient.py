@@ -89,8 +89,8 @@ class ResClient(object):
         def prepare_list_data( data):
             def _f(v):
                 # Is the value a reference, get the actual item from cache
-                if v is not None and hasattr(v,'rid'):
-                    ci = self.cache[v.rid]
+                if isinstance(v, dict) and 'rid' in v:
+                    ci = self.cache[v['rid']]
                     ci.addIndirect()
                     return ci.item
                 return v
